@@ -55,4 +55,11 @@ class UserTest < ActiveSupport::TestCase
 
     assert_nil User.find_by_token_for(:password_reset, token)
   end
+
+  test "api auth token can be generated for a user without a password digest" do
+    user = users(:one)
+    user.update_column(:password_digest, nil)
+
+    assert_predicate user.generate_token_for(:api_auth), :present?
+  end
 end
