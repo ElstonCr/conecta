@@ -1,9 +1,11 @@
+<% digest = BCrypt::Password.create("password123", cost: BCrypt::Engine::MIN_COST) %>
+
 one:
   name: John
   email: fixture-john@example.com
-  password_digest: MyString
+  password_digest: <%= digest %>
 
 two:
   name: Jane
   email: fixture-jane@example.com
-  password_digest: MyString
+  password_digest: <%= digest %>
