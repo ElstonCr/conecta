@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bin/rails test:*)",
+      "Bash(bin/rubocop:*)",
+      "Bash(bin/brakeman:*)",
+      "Bash(bin/rails routes:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)"
+    ],
+    "ask": [
+      "Bash(bin/rails db:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git merge:*)",
+      "Bash(bundle add:*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./config/master.key)",
+      "Read(./config/credentials/*.key)",
+      "Read(./.kamal/secrets)",
+      "Bash(git push --force:*)",
+      "Bash(bin/rails db:drop:*)",
+      "Bash(cat .env:*)"
+    ]
+  }
+}

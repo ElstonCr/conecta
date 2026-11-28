@@ -33,3 +33,7 @@
 
 # Ignore simple coverage
 /coverage
+
+# Claude code
+/CLAUDE.local.md
+/.claude/settings.json
